@@ -1,7 +1,7 @@
 'use client'
 import { UserButton } from '@clerk/nextjs'
 
-import MobileSidebar from '@/components/mobile-sidebar'
+import MobileSidebar from '@/components/MobileSidebar'
 
 const Navbar = () => {
   return (

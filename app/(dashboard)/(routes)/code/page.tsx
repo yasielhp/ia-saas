@@ -8,7 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 
-import Heading from '@/components/heading'
+import Heading from '@/components/Heading'
 
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
@@ -16,11 +16,11 @@ import { Button } from '@/components/ui/button'
 
 import { formSchema } from './constants'
 import { ChatCompletionRequestMessage } from 'openai'
-import Empty from '@/components/empty'
-import Loader from '@/components/loader'
+import Empty from '@/components/Empty'
+import Loader from '@/components/Loader'
 import { cn } from '@/lib/utils'
 import USerAvatar from '@/components/user-avatar'
-import BotAvatar from '@/components/bot-avatar'
+import BotAvatar from '@/components/BotAvatar'
 
 const CodePage = () => {
   const router = useRouter()

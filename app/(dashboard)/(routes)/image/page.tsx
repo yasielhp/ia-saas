@@ -7,15 +7,15 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/navigation'
 
-import Heading from '@/components/heading'
+import Heading from '@/components/Heading'
 
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 
 import { amountOptions, formSchema, resolutionOptions } from './constants'
-import Empty from '@/components/empty'
-import Loader from '@/components/loader'
+import Empty from '@/components/Empty'
+import Loader from '@/components/Loader'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Card, CardFooter } from '@/components/ui/card'
 import Image from 'next/image'
