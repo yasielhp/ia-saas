@@ -18,7 +18,7 @@ import { ChatCompletionRequestMessage } from 'openai'
 import Empty from '@/components/Empty'
 import Loader from '@/components/Loader'
 import { cn } from '@/lib/utils'
-import USerAvatar from '@/components/user-avatar'
+import USerAvatar from '@/components/UserAvatar'
 import BotAvatar from '@/components/BotAvatar'
 import { useProModal } from '@/hooks/useProModal'
 

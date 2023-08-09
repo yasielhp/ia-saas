@@ -7,6 +7,8 @@ import { Check, Code, ImageIcon, MessageSquare, Music, VideoIcon, Zap } from 'lu
 import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
+import axios from 'axios'
+import { useState } from 'react'
 
 const tools = [
   {
@@ -43,6 +45,20 @@ const tools = [
 
 const ProModal = () => {
   const proModal = useProModal()
+  const [loading, setLoading] = useState(false)
+
+  const onSubscribe = async () => {
+    try {
+      setLoading(true)
+      const response = await axios.get('/api/stripe')
+
+      window.location.href = response.data.url
+    } catch (err) {
+      console.log(err, 'STRIPE_CLIENT_ERROR')
+    } finally {
+      setLoading(false)
+    }
+  }
   return (
     <Dialog open={proModal.isOpen} onOpenChange={proModal.closeModal}>
       <DialogContent>
@@ -72,7 +88,7 @@ const ProModal = () => {
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <Button size='lg' className='w-full' variant='premium'>Upgrade <Zap className='w-4 h-4 ml-2 fill-white' /></Button>
+          <Button onClick={onSubscribe} size='lg' className='w-full' variant='premium'>{loading ? 'Loading...' : 'Upgrade'}{!loading && <Zap className='w-4 h-4 ml-2 fill-white' />}</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
