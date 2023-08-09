@@ -21,8 +21,10 @@ import Loader from '@/components/Loader'
 import { cn } from '@/lib/utils'
 import USerAvatar from '@/components/user-avatar'
 import BotAvatar from '@/components/BotAvatar'
+import { useProModal } from '@/hooks/useProModal'
 
 const CodePage = () => {
+  const proModal = useProModal()
   const router = useRouter()
   const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([])
 
@@ -45,7 +47,9 @@ const CodePage = () => {
 
       form.reset()
     } catch (error: any) {
-      console.log(error)
+      if (error?.response?.status === 403) {
+        proModal.openModal()
+      }
     } finally {
       router.refresh()
     }

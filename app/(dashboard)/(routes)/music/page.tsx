@@ -16,8 +16,10 @@ import { Button } from '@/components/ui/button'
 import { formSchema } from './constants'
 import Empty from '@/components/Empty'
 import Loader from '@/components/Loader'
+import { useProModal } from '@/hooks/useProModal'
 
 const MusicPage = () => {
+  const proModal = useProModal()
   const router = useRouter()
   const [music, setMusic] = useState<string>()
 
@@ -40,7 +42,9 @@ const MusicPage = () => {
 
       form.reset()
     } catch (error: any) {
-      console.log(error)
+      if (error?.response?.status === 403) {
+        proModal.openModal()
+      }
     } finally {
       router.refresh()
     }
