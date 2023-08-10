@@ -8,21 +8,21 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 
-import { Heading } from '@/components/Heading'
-
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 
 import { formSchema } from './constants'
 import { ChatCompletionRequestMessage } from 'openai'
-import { Empty } from '@/components/Empty'
-import { Loader } from '@/components/Loader'
+
 import { cn } from '@/lib/utils'
 import USerAvatar from '@/components/UserAvatar'
 import BotAvatar from '@/components/BotAvatar'
 import { useProModal } from '@/hooks/useProModal'
 import { toast } from 'react-hot-toast'
+import { Heading } from '@/components/heading'
+import { Loader } from '@/components/loader'
+import { Empty } from '@/components/empty'
 
 const CodePage = () => {
   const proModal = useProModal()

@@ -1,6 +1,6 @@
 'use client'
 
-import { Empty } from '@/components/Empty'
+import { Empty } from '@/components/empty'
 
 const Error = () => {
   return (

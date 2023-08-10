@@ -7,15 +7,15 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/navigation'
 
-import { Heading } from '@/components/Heading'
+import { Heading } from '@/components/heading'
 
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 
 import { formSchema } from './constants'
-import { Empty } from '@/components/Empty'
-import { Loader } from '@/components/Loader'
+import { Empty } from '@/components/empty'
+import { Loader } from '@/components/loader'
 import { useProModal } from '@/hooks/useProModal'
 import { toast } from 'react-hot-toast'
 
