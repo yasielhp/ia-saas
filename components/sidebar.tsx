@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 
 import { cn } from '@/lib/utils'
 import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, VideoIcon } from 'lucide-react'
-import FreeCounter from './freeCounter'
+import FreeCounter from './free-counter'
 
 const montserrat = Montserrat({
   weight: ['600'],

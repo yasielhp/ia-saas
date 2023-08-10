@@ -1,6 +1,6 @@
 'user client'
 
-import { CrispChat } from './crispChat'
+import { CrispChat } from './crisp-chat'
 
 export const CrispProvider = () => {
   return <CrispChat />
