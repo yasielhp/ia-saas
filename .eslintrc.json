@@ -4,6 +4,7 @@
     "./node_modules/standard/eslintrc.json"
   ],
   "rules": {
-    "react/jsx-handler-names": "off"
+    "react/jsx-handler-names": "off",
+    "space-before-function-paren": "off"
   }
 }
