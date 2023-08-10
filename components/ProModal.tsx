@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import axios from 'axios'
 import { useState } from 'react'
+import { toast } from 'react-hot-toast'
 
 const tools = [
   {
@@ -54,7 +55,7 @@ const ProModal = () => {
 
       window.location.href = response.data.url
     } catch (err) {
-      console.log(err, 'STRIPE_CLIENT_ERROR')
+      toast.error('Something went wrong')
     } finally {
       setLoading(false)
     }
@@ -88,7 +89,7 @@ const ProModal = () => {
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <Button onClick={onSubscribe} size='lg' className='w-full' variant='premium'>{loading ? 'Loading...' : 'Upgrade'}{!loading && <Zap className='w-4 h-4 ml-2 fill-white' />}</Button>
+          <Button disabled={loading} onClick={onSubscribe} size='lg' className='w-full' variant='premium'>{loading ? 'Loading...' : 'Upgrade'}{!loading && <Zap className='w-4 h-4 ml-2 fill-white' />}</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
