@@ -9,7 +9,7 @@ interface HeadingProps {
   bgColor?: string
 }
 
-const Heading = ({
+export const Heading = ({
   title,
   description,
   icon: Icon,
@@ -28,5 +28,3 @@ const Heading = ({
     </div>
   )
 }
-
-export default Heading

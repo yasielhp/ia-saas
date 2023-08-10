@@ -1,6 +1,6 @@
 import { Settings } from 'lucide-react'
 
-import Heading from '@/components/Heading'
+import { Heading } from '@/components/Heading'
 import { SubscriptionButton } from '@/components/SubscriptionButton'
 import { checkSubscription } from '@/lib/subscription'
 
